@@ -5,12 +5,11 @@ Team:
 - Adam Leddy
 - Conor Duddy
 
-This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL in a variety of synthetic markets that mirrored real-world dynamics such as market making, ETF arbitrage, options trading, and cross-exchange inefficiencies.
+This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL in a variety of synthetic markets that mirrored real-world dynamics such as market making, ETF and options trading, as well as cross-exchange inefficiencies.
 
-Our final submission placed **6th globally**. Across products, success required a mix of principled design, strategic inference, and empirical validation. While specific approaches varied by asset, our process consistently emphasized careful data analysis, statistical modeling, and simulation-backed decision-making.
+After initial struggles we managed to come back and in the final standings we placed **6th globally**. Across products, success required a mix of strong teamwork, data analysis and quantitative modeling. While specific approaches varied by asset, our process consistently emphasized careful data analysis, mathematical modeling alongside backtesting.
 
 What follows is a breakdown of that process — asset by asset.
-
 
 
 ---
