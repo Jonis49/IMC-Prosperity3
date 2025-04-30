@@ -29,6 +29,15 @@ Under mild assumptions the problem becomes optimally solvable.
 ---
 
 <details>
+<summary>SQUID INK - mean reversion </summary>
+
+Under mild assumptions the problem becomes optimally solvable.
+
+</details>
+
+---
+
+<details>
 <summary>BASKETS (ETFs) - statistical arbitrage </summary>
 
 dont include olivia here
