@@ -5,9 +5,9 @@ Team:
 - Adam Leddy
 - Conor Duddy
 
-This repository documents our approach to the 2025 IMC Prosperity 3 algorithmic trading competition — a multi-round challenge involving over 12,000 global teams. The task: design profit-maximizing strategies across a growing set of synthetic assets, each emulating real-world market opportunities such as market making, ETF arbitrage, options pricing, and cross-exchange inefficiencies. Our final submission placed **6th globally**, driven by a systematic approach to extracting statistical edge and managing execution risk.
+This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL in a variety of synthetic markets that mirrored real-world dynamics such as market making, ETF arbitrage, options trading, and cross-exchange inefficiencies.
 
-In each round, teams deployed autonomous trading scripts to interact with live order books in real time — quoting, hedging, and managing inventory to extract PnL under tight latency constraints. Finding edge was fundamentally a quantitative challenge: it required modeling step distributions, identifying statistical asymmetries, and validating insights through rigorous data analysis and simulation.
+Our final submission placed **6th globally**. Across products, success required a mix of principled design, strategic inference, and empirical validation. While specific approaches varied by asset, our process consistently emphasized careful data analysis, statistical modeling, and simulation-backed decision-making.
 
 What follows is a breakdown of that process — asset by asset.
 
