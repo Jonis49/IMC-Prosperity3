@@ -1,4 +1,6 @@
 # WHAT'S THE IMPACT
+![Rainforest Resin PnL](images/prosperity_overview.png)
+
 Team:
 - Jonatan Svensson
 - Jack Sherry
