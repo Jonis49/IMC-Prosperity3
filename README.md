@@ -1,20 +1,16 @@
 # WHAT'S THE IMPACT
 
-<details open>
-<summary>INTRODUCTION</summary>
-
 This repository contains my write-up for the IMC Trading Competition.  
 The focus is on modeling and evaluating statistical arbitrage strategies across five tradables:  
 **Rainforest Resin**, **Kelp**, **Baskets**, **Volcanic Rocks**, and **Macarons**.
 
 All analyses are driven by simulations, empirical distributions, dynamic programming, and range-based triggers.
 
-</details>
 
 ---
 
 <details>
-<summary>RAINFOREST RESIN - a DP approach to optimally market make in a constrained setting </summary>
+<summary>RAINFOREST RESIN - a DP approach to optimal market making in a constrained setting </summary>
 
 blablabla
 
