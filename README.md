@@ -10,7 +10,7 @@ All analyses are driven by simulations, empirical distributions, dynamic program
 ---
 
 <details>
-<summary>RAINFOREST RESIN - a DP approach to optimal market making in a constrained setting </summary>
+<summary>RAINFOREST RESIN - a DP approach to optimal market making in a simplistic setting </summary>
 
 blablabla
 
