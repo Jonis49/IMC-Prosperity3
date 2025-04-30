@@ -14,7 +14,25 @@ All analyses are driven by simulations, empirical distributions, dynamic program
 ---
 
 <details>
-<summary>RAINFOREST RESIN - DYNAMIC PROGRAMMING APPROACH TO MARKET MAKING IN CONSTRAINED SETTING </summary>
+<summary>RAINFOREST RESIN - a DP approach to optimally market make in a constrained setting </summary>
+
+blablabla
+
+</details>
+
+---
+
+<details>
+<summary>BASKETS (ETFs) - statistical arbitrage </summary>
+
+dont include olivia here
+
+</details>
+
+---
+
+<details>
+<summary>VOLCANIC ROCK VOUCHERS (options) - volatility smile</summary>
 
 WHAT'S THE IMPACT
 
@@ -23,7 +41,7 @@ WHAT'S THE IMPACT
 ---
 
 <details>
-<summary>KELP</summary>
+<summary>MACARONS - cross-exchange arbitrage</summary>
 
 WHAT'S THE IMPACT
 
@@ -32,26 +50,8 @@ WHAT'S THE IMPACT
 ---
 
 <details>
-<summary>BASKETS</summary>
+<summary>OLIVIA (insider trading) -  DP solution to optimal use of insider information </summary>
 
-WHAT'S THE IMPACT
-
-</details>
-
----
-
-<details>
-<summary>VOLCANIC ROCKS</summary>
-
-WHAT'S THE IMPACT
-
-</details>
-
----
-
-<details>
-<summary>MACARONS</summary>
-
-WHAT'S THE IMPACT
+first describe how it was used for croissant and baskets and why not kelp. Then explain whole bound thing.
 
 </details>
