@@ -1,5 +1,4 @@
 # WHAT'S THE IMPACT
-![Rainforest Resin PnL](images/prosperity_overview.png)
 
 Team:
 - Jonatan Svensson
@@ -13,6 +12,7 @@ After a slow start in the early rounds, we made a strong comeback and ultimately
 
 What follows is a breakdown of that process — asset by asset.
 
+![Rainforest Resin PnL](images/prosperity_overview.png)
 
 ---
 
