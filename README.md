@@ -20,9 +20,9 @@ What follows is a breakdown of that process — asset by asset.
 ---
 
 <details>
-<summary>RAINFOREST RESIN - a DP approach to optimal market making in a simplistic setting </summary>
+<summary>RAINFOREST RESIN - a DP solution to optimal market making in a simplistic setting </summary>
 
-blablabla
+Under mild assumptions the problem becomes optimally solvable.
 
 </details>
 
@@ -56,7 +56,7 @@ WHAT'S THE IMPACT
 ---
 
 <details>
-<summary>OLIVIA (insider trading) -  DP solution to optimal use of insider information </summary>
+<summary>OLIVIA (insider trading) -  a DP solution to optimal use of insider information </summary>
 
 first describe how it was used for croissant and baskets and why not kelp. Then explain whole bound thing.
 
