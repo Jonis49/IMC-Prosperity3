@@ -56,7 +56,7 @@ WHAT'S THE IMPACT
 ---
 
 <details>
-<summary>OLIVIA (insider trading) -  a DP solution to optimal use of insider information </summary>
+<summary>LABELED COUNTERPARTIES -  a DP solution to optimal use of insider information </summary>
 
 first describe how it was used for croissant and baskets and why not kelp. Then explain whole bound thing.
 
