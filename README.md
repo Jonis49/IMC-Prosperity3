@@ -1,93 +1,57 @@
-# 🏦 IMC Trading Competition – Statistical Arbitrage Strategy
+# WHAT'S THE IMPACT
 
-## 📌 Introduction
+<details open>
+<summary>INTRODUCTION</summary>
 
-This repository contains my submission for the IMC Trading Competition. The focus is on developing and analyzing statistical arbitrage strategies across five exotic tradables. The analysis includes empirical data exploration, modeling, and strategy simulation using both rule-based and dynamic programming techniques.
+This repository contains my write-up for the IMC Trading Competition.  
+The focus is on modeling and evaluating statistical arbitrage strategies across five tradables:  
+**Rainforest Resin**, **Kelp**, **Baskets**, **Volcanic Rocks**, and **Macarons**.
 
-All results are supported by Monte Carlo simulations and visualized using custom-built Python tooling.
+All analyses are driven by simulations, empirical distributions, dynamic programming, and range-based triggers.
 
----
-
-## 🌿 Rainforest Resin
-
-### 📊 Overview
-Briefly describe the behavior and unique characteristics of Rainforest Resin as a tradable.
-
-### 🔍 Analysis
-- Step distribution analysis
-- Price path modeling
-- Strategy performance comparison
-
-### 🖼️ Figures
-![Rainforest Resin PnL](images/rainforest_resin_pnl.png)
+</details>
 
 ---
 
-## 🪸 Kelp
+<details>
+<summary>RAINFOREST RESIN</summary>
 
-### 📊 Overview
-Insight into volatility, mean-reversion, or trend behavior observed in Kelp.
+WHAT'S THE IMPACT
 
-### 🔍 Analysis
-- Comparison to synthetic walk models
-- Positioning strategies
-- Gain against baseline
-
-### 🖼️ Figures
-![Kelp Strategy Performance](images/kelp_strategy.png)
+</details>
 
 ---
 
-## 🧺 Baskets
+<details>
+<summary>KELP</summary>
 
-### 📊 Overview
-Description of behavior (e.g., high noise, drift, structure) and modeling approach.
+WHAT'S THE IMPACT
 
-### 🔍 Analysis
-- Empirical vs. model step distribution
-- Strategy timing
-- Dynamic range adaptation
-
-### 🖼️ Figures
-![Baskets Walk Modeling](images/baskets_walks.png)
+</details>
 
 ---
 
-## 🪨 Volcanic Rocks
+<details>
+<summary>BASKETS</summary>
 
-### 📊 Overview
-Summary of volatility spikes or regime changes.
+WHAT'S THE IMPACT
 
-### 🔍 Analysis
-- Edge-aware strategies
-- Log-scaled heatmaps of gain
-- Model calibration details
-
-### 🖼️ Figures
-![Volcanic Rocks DP Gain](images/volcanic_rocks_dp_gain.png)
+</details>
 
 ---
 
-## 🍰 Macarons
+<details>
+<summary>VOLCANIC ROCKS</summary>
 
-### 📊 Overview
-Discuss stationarity or patterns observed in Macaron pricing.
+WHAT'S THE IMPACT
 
-### 🔍 Analysis
-- Range-based triggers
-- Real vs simulated comparisons
-- Monte Carlo EVs
-
-### 🖼️ Figures
-![Macaron EV Heatmap](images/macarons_ev_heatmap.png)
+</details>
 
 ---
 
-## 🧠 Summary & Insights
+<details>
+<summary>MACARONS</summary>
 
-Across all assets, we observe that hybrid strategies combining global extrema with mid-range threshold triggers outperform simple min/max trading under most simulated distributions. The results confirm that statistical modeling of price steps and dynamic optimization add significant value.
+WHAT'S THE IMPACT
 
----
-
-## 🗂️ Repository Structure
-
+</details>
