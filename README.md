@@ -14,7 +14,7 @@ All analyses are driven by simulations, empirical distributions, dynamic program
 ---
 
 <details>
-<summary>RAINFOREST RESIN</summary>
+<summary>RAINFOREST RESIN - DYNAMIC PROGRAMMING APPROACH TO MARKET MAKING IN CONSTRAINED SETTING </summary>
 
 WHAT'S THE IMPACT
 
