@@ -1,10 +1,16 @@
 # WHAT'S THE IMPACT
+Team:
+- Jonatan Svensson
+- Jack Sherry
+- Adam Leddy
+- Conor Duddy
 
-This repository contains my write-up for the IMC Trading Competition.  
-The focus is on modeling and evaluating statistical arbitrage strategies across five tradables:  
-**Rainforest Resin**, **Kelp**, **Baskets**, **Volcanic Rocks**, and **Macarons**.
+This repository documents our approach to the 2025 IMC Prosperity 3 algorithmic trading competition — a multi-round challenge involving over 12,000 global teams. The task: design profit-maximizing strategies across a growing set of synthetic assets, each emulating real-world market opportunities such as market making, ETF arbitrage, options pricing, and cross-exchange inefficiencies. Our final submission placed **6th globally**, driven by a systematic approach to extracting statistical edge and managing execution risk.
 
-All analyses are driven by simulations, empirical distributions, dynamic programming, and range-based triggers.
+In each round, teams deployed autonomous trading scripts to interact with live order books in real time — quoting, hedging, and managing inventory to extract PnL under tight latency constraints. Finding edge was fundamentally a quantitative challenge: it required modeling step distributions, identifying statistical asymmetries, and validating insights through rigorous data analysis and simulation.
+
+What follows is a breakdown of that process — asset by asset.
+
 
 
 ---
