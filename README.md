@@ -13,10 +13,9 @@ After a slow start in the early rounds, we made a strong comeback and ultimately
 What follows is a breakdown of that process — asset by asset.
 
 <p align="center">
-  <img src="images/prosperity_overview.png" width="400"/>
+  <img src="images/prosperity_overview.png" width="600"/>
 </p>
 
-![Rainforest Resin PnL](images/prosperity_overview.png)
 
 ---
 
