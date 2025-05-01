@@ -1,26 +1,28 @@
 # WHAT'S THE IMPACT
 
-Team:
-- Jonatan Svensson
-- Jack Sherry
-- Adam Leddy
-- Conor Duddy
+**Team:**
+- Jonatan Svensson  
+- Jack Sherry  
+- Adam Leddy  
+- Conor Duddy  
 
-This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts aimed at maximizing PnL across a variety of synthetic markets designed to emulate real-world dynamics, including market making, ETF and options trading, cross-exchange arbitrage, and counterparty-driven strategies. Each round also featured a game-theoretic problem whose payout often depended on the distribution of choices across all teams, though these played a minor role relative to the algorithmic component.
+This repository outlines our submission to the 2025 **IMC Prosperity 3** algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge spanned five rounds, with new products and market complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL across synthetic markets that emulate real-world dynamics — including market making, ETF and options trading, cross-exchange arbitrage, and counterparty-driven strategies. Each round also included a game-theoretic problem, though these played a minor role relative to the algorithmic component.
 
-After making no profit in the first round due to technical issues, we made a strong comeback and ultimately placed **6th globally**. We attribute this performance to a mix of curiosity, collaboration, and sheer enthusiasm for the challenge. Despite juggling 3 theses, six exams, and even the Irish Open Main Event during the 15-day competition, we maintained a highly collaborative environment that allowed us to develop sophisticated strategies across a wide range of products.
+After making no profit in the first round due to technical issues, we made a strong comeback and ultimately placed **6th globally**. We attribute this performance to a mix of curiosity, collaboration, and genuine enthusiasm for the kinds of problems that arise in the pursuit of optimal trading strategies. Despite juggling **three theses**, **six exams**, and even the **Irish Open Main Event** during the 15-day competition, we maintained a highly collaborative environment that allowed us to develop and iterate on sophisticated strategies across a wide range of products.
 
-From the start, we approached the competition not simply as a race to the top, but as a hands-on opportunity to learn about and get hands on experience with algorithmic trading. Our goal was to design strategies grounded in sound reasoning and real insight — regardless of leaderboard position. While the specifics varied by product, our overarching approach was to maximize expected value where possible, and to hedge intelligently. We deliberately avoided the kind of reckless, high-variance trading encouraged by the competition's skewed payout structure, choosing instead to focus on robustness, understanding, and long-term intuition.
+From the outset, we approached the competition not as a race to the top, but as an opportunity to gain hands-on experience with algorithmic trading. Our focus was on building strategies grounded in sound reasoning and mathematical insight — not exploiting leaked/recycled data[^1]. While the specifics varied by product, our overarching approach was to maximize expected value where possible, hedge intelligently when cost-effective, and prioritize robustness over high-risk tactics. Though the competition's payout structure rewarded volatility, we consistently favored stability, explainability, and generalization.
 
-What follows is a product-by-product breakdown of the algorithmic strategies we developed. We have chosen not to include the game-theoretic problems, as we do not believe they are particularly interesting to highlight.
-
+What follows is a product-by-product breakdown of the algorithmic strategies we developed. We’ve omitted the game-theoretic components, as we don’t believe they are particularly interesting or representative of our approach.
 
 <p align="center">
   <img src="images/prosperity_overview.png" width="600"/>
 </p>
 
-
 ---
+
+[^1]: The first couple of rounds were plagued with teams hardcoding strategies as IMC was reusing a lot of publicaly available data from previous runs of the competition.
+
+
 
 <details>
 <summary>RAINFOREST RESIN - a DP solution to optimal market making in a simplistic setting </summary>
