@@ -76,7 +76,8 @@ WHAT'S THE IMPACT
 <details>
 <summary>LABELED COUNTERPARTIES – a DP solution to optimal use of insider information</summary>
 <br>
-  
+
+# Short Summary
 In the final round, counterparty identifiers were added to the historical data. This meant that for every trade, the identities of both the buyer and seller were disclosed — and this information would also be available in real time during the final submission. There were around 20 market participants, each focused on their own subset of products.
 
 We began by plotting PnL for each counterparty, split by product and decomposed into execution and holding components. Some counterparties generated substantial execution PnL by consistently trading at favorable prices. However, this insight offered limited value for refining our algorithms, as we were already fully exploiting those opportunities through aggressive market making.
@@ -103,10 +104,10 @@ To illustrate this, consider the following edge case: the global minimum occurs,
 
 ## Summary this section
 
-- Modelling price
+- Modelling price and establishing assumptions
 - Bayesian approach to utilizing information from bounds
 - Setting up and solving dynamic program for optimal trading
-- Evaluating performans of trading strategy
+- Evaluating performance of resulting strategy
 
 
 ## Price walk model
@@ -164,6 +165,9 @@ Note that we need to wait for the second extrema before there will be enough inf
 
 ## Performance
 
+
+
+include something about how easy tis would be to implement by jsut fitting one polynomial
 
 </details>
 
