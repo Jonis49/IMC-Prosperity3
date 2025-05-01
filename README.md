@@ -104,19 +104,19 @@ We work in a grid of shape `(remaining time steps) × (current price)`, and at e
 
 This conditioning can be formalized in a Bayesian framework. Knowing the bounds removes all future paths that would exit the allowed region. From any given point, we discard such violating paths and reweight the remaining ones to compute the updated distribution for the next step. Naively computing this requires evaluating all possible paths — an intractable problem, as the number of walks scales exponentially (e.g., 13^t with t ~ 10,000).
 
-To make this computation feasible, we instead begin by computing the **survival probability**: the probability that a walk starting from each grid point remains within the bounds until the end. This can be done recursively in time. We initialize at t = 1, where almost all points have survival probability close to 1 — except those within a few ticks (the largest possible step size) of the boundaries. From there, we propagate survival probabilities backward using a convolution with the step distribution at each slice in time. This recursive approach allows us to efficiently estimate, for any point, how constrained the remaining path is.
+To make this computation feasible, we instead begin by computing the **survival probability**: the probability that a walk starting from each grid point remains within the bounds until the end. This can be done recursively in time. We initialize at t = 1, where almost all points have survival probability 1 — except those within a few ticks (the largest possible step size) of the boundaries. From there, we propagate survival probabilities backward using a convolution with the step distribution at each slice in time. This recursive approach allows us to efficiently estimate, for any point, what proportion of paths from there end up inside and outside the bounds.
 
 The figure below shows the resulting survival probabilities under the bounds [0, 10], assuming the following step distribution:
 
 `probs = {0: 0.6, ±1: 0.17, ±2: 0.03}`
 
-As expected, points near the bounds are significantly more likely to "die out" (i.e., violate the constraint), whereas interior points retain high survival probability for many steps.
-
+As expected, points near the bounds and with a lot of time left in the session are likely to walk outside violate the bounds, whereas points close far from the bounds and close to the end show high survival probability.
 
 <p align="center">
   <img src="images/olivia/survival_probability.png" width="600"/>
 </p>
 
+The step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution.
 
 
 Problem formulation:
