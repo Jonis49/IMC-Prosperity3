@@ -124,9 +124,12 @@ As expected, points near the bounds and with a lot of time left in the session a
 
 From the survival grid, the step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these skewed step distributions in place, we are ready to formulate a DP algorithm that yields the optimal trading strategy.
 
-**Note:** This DP formulation can be applied even without any bounding constraints on the price. However, in the case of a symmetric step distribution, the expected value of any trade becomes negative — since price changes have zero expected drift, and each trade incurs a cost from crossing the spread. It is precisely the bounds on the future price path that introduce asymmetry into the step distribution, making trading directionally profitable and the problem worth solving.
 
 ## DP
+
+**Note:** This DP formulation can be applied even without any bounding constraints on the price. However, in the case of a symmetric step distribution, the expected value of any trade becomes negative — since price changes have zero expected drift, and each trade incurs a cost from crossing the spread. It is precisely the bounds on the future price path that introduce asymmetry into the step distribution, making trading directionally profitable and the problem worth solving.
+
+
 
 Problem formulation:
 Given a realization of an i.i.d. random walk with a known step distribution 
