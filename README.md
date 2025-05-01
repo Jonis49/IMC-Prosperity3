@@ -6,11 +6,12 @@ Team:
 - Adam Leddy
 - Conor Duddy
 
-This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL in a variety of synthetic markets that mirrored real-world dynamics such as market making, ETF and options trading, cross-exchange trading, and counterparty-based trading.
+This repository outlines our submission to the 2025 IMC Prosperity 3 algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge unfolded over five rounds, with new products and complexities introduced every three days. In each round, teams submitted autonomous trading scripts aimed at maximizing PnL across a variety of synthetic markets designed to emulate real-world dynamics, including market making, ETF and options trading, cross-exchange arbitrage, and counterparty-driven strategies. Each round also featured a game-theoretic problem whose payout often depended on the distribution of choices across all teams, though these played a minor role relative to the algorithmic component.
 
-After a slow start in the early rounds, we made a strong comeback and ultimately placed **6th globally**. We attribute this result to a combination of tight collaboration, extensive data analysis, and disciplined quantitative modeling. While the specifics varied across products, our overall approach was grounded in mathematical rigor and empirical validation.
+After a slow start, we made a strong comeback and ultimately placed 6th globally. We attribute this performance to a combination of close collaboration, rigorous data analysis, and disciplined quantitative modeling. While the specifics varied by product, our overarching approach was to maximize expected value where possible, while hedging selectively when it could be done with minimal cost. We consistently prioritized sound, risk-aware strategies — even though the competition’s skewed payout structure incentivized high-risk, high-reward behavior.
 
-What follows is a breakdown of that process — asset by asset.
+What follows is a product-by-product breakdown of the algorithmic strategies we developed. We have chosen not to include the game-theoretic problems, as we do not believe they are particularly interesting to highlight.
+
 
 <p align="center">
   <img src="images/prosperity_overview.png" width="600"/>
