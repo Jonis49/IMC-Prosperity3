@@ -28,6 +28,23 @@ What follows is a product-by-product breakdown of the strategies we developed. W
 
 [^1]: The first few rounds were plagued by teams hardcoding strategies, as IMC reused publicly available data from earlier editions of the competition.
 
+
+<details>
+<summary>RAINFOREST GENERAL COMMENTS </summary>
+
+anything like this :
+
+Talk about backing out fv from submitting and how it lines upw ith mid of big sizes.
+reference the wiki 
+maybe mention that we are a first time team
+maybe how to contact us if 
+
+
+
+</details>
+
+---
+
 <details>
 <summary>RAINFOREST RESIN - a DP solution to optimal market making in a simplistic setting </summary>
 
@@ -104,10 +121,11 @@ To illustrate this, consider the following edge case: the global minimum occurs,
 
 ## Summary this section
 
-- Modelling price and establishing assumptions
-- Bayesian approach to utilizing information from bounds
-- Setting up and solving dynamic program for optimal trading
-- Evaluating performance of resulting strategy
+- Modelling Price and Establishing Assumptions
+- Bayesian Approach to Utilizing Information from Bounds
+- Setting Up and Solving Dynamic Program for Optimal Trading
+- Evaluating Performance of Resulting Strategy
+- Concluding Remarks
 
 
 ## Price walk model
@@ -163,7 +181,7 @@ Note that we need to wait for the second extrema before there will be enough inf
 
 ## Performance
 
-
+## Remarks
 
 include something about how easy tis would be to implement by jsut fitting one polynomial
 
