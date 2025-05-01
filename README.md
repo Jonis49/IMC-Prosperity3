@@ -95,11 +95,18 @@ This summarizes what we managed to implement before the final submission. After 
 
 ---
 
+# Dynamic Programming Again?
+
 The information contained in the global minimum and maximum of a random price walk can be leveraged more effectively than simply buying the minimum and selling the maximum. Once both extrema have occurred (noting that we only observe them as they happen), we gain a powerful constraint: the remainder of the walk must remain within the established min-max range. This fundamentally alters the distribution of future prices.
 To illustrate this, consider the following edge case: the global minimum occurs, and we initiate a long position. Later, the global maximum is reached, and we switch to a short. If the price subsequently falls back to the level of the previously announced minimum, we now know with certainty that it cannot drop any further — doing so would contradict the declared minimum. This allows us to confidently enter a long position, exploiting the structural boundary created by the known extrema.
 
 
-## Summary of 
+## Summary this section
+
+- Modelling price
+- Bayesian approach to utilizing information from bounds
+- Setting up and solving dynamic program for optimal trading
+- Evaluating performans of trading strategy
 
 
 ## Price walk model
@@ -112,7 +119,7 @@ A reasonable model assumes that the price evolves as an i.i.d. random walk with 
 </p>
 
 
-## Modified step distribution
+## Utilizing the bounds
 Given the assumption of an i.i.d. random walk, we can derive an optimal trading strategy using dynamic programming (DP). The key insight is that once both the global minimum and maximum have occurred, the remaining price path must stay within these bounds for the rest of the day. This constraint allows us to condition the step distribution at each point in the remaining walk, effectively updating the dynamics based on available information.
 
 We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on how likely it is for future paths to remain within the given bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
@@ -155,6 +162,7 @@ Variables:
 
 Note that we need to wait for the second extrema before there will be enough information to trade. After the first we will enter a position one way. The bound we are given will only ever alter the rest of the walk in favour of our position and we will therefore not trade until the second extrema.
 
+## Performance
 
 
 </details>
