@@ -18,7 +18,7 @@ After making no profit in the first round due to technical issues, we made a str
 
 From the outset, we approached the competition not as a race to the top, but as an opportunity to gain hands-on experience with algorithmic trading. Our focus was on building strategies grounded in sound reasoning and mathematical insight — not exploiting leaked/recycled data[^1]. While the specifics varied by product, our overarching approach was to maximize expected value where possible, hedge intelligently when cost-effective, and favor robustness over the high-risk tactics incentivized by the competition’s payout structure.
 
-What follows is a product-by-product breakdown of the algorithmic strategies we developed. We’ve omitted the game-theoretic components, as we don’t believe they are particularly interesting or representative of our approach.
+What follows is a product-by-product breakdown of the algorithmic strategies we developed. We’ve omitted our solutions to the game-theoretic problems, as we don’t believe they are of particular interest.
 
 <p align="center">
   <img src="images/prosperity_overview.png" width="600"/>
