@@ -19,7 +19,7 @@ This repository outlines our submission to the 2025 **IMC Prosperity 3** algorit
 
 After making no profit in the first round due to technical issues, we made a strong comeback and ultimately placed **6th globally**. We attribute this performance to a mix of curiosity, collaboration, and genuine enthusiasm for the kinds of problems that arise in the pursuit of optimal trading strategies. Despite juggling **three theses**, **six exams**, and even the **Irish Open Main Event** during the 15-day competition, we maintained a highly collaborative environment that allowed us to develop and iterate on sophisticated strategies across a wide range of products.
 
-From the outset, we approached the competition not as a race to the top, but as an opportunity to gain hands-on experience with algorithmic trading. Our focus was on building strategies grounded in sound reasoning and mathematical insight — not exploiting leaked/recycled data[^1]. While the specifics varied by product, our overarching approach was to maximize expected value where possible, hedge intelligently when cost-effective, and favor robustness over the high-risk tactics incentivized by the competition’s payout structure.
+From the start, we treated the competition as a chance to learn — a way to get hands-on experience with algorithmic trading by building real strategies under pressure. We were more interested in understanding the problems than in chasing the leaderboard, which is why we chose not to take shortcuts like relying on recycled data[^1]. We tried to focus on strategies that would make sense in a real trading environment — the kind you'd actually want to run if the PnL were yours to keep — rather than pushing for outsized risk just to climb the rankings.
 
 What follows is a product-by-product breakdown of the strategies we developed. We’ve left out the game-theoretic problems to keep the focus on the core algorithmic challenges.
 
@@ -30,21 +30,6 @@ What follows is a product-by-product breakdown of the strategies we developed. W
 ---
 
 [^1]: The first few rounds were plagued by teams hardcoding strategies, as IMC reused publicly available data from earlier editions of the competition.
-
-
-## Table of Contents
-
-- [General Comments](#general-comments)
-- [Round Summary](#round-summary)
-- [Rainforest Resin – DP Market Making](#rainforest-resin)
-- [Squid Ink – Mean Reversion](#squid-ink)
-- [Baskets – Statistical Arbitrage](#baskets)
-- [Volcanic Rock – Options](#volcanic-rock)
-- [Macarons – Cross-Exchange Arbitrage](#macarons)
-- [Labeled Counterparties – DP Insider Strategy](#labeled-counterparties)
-
----
-
 
 <details>
 <summary> GENERAL COMMENTS </summary>
