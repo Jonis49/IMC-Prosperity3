@@ -89,6 +89,11 @@ This summarizes what we managed to implement before the final submission. After 
 The information contained in the global minimum and maximum of a random price walk can be leveraged more effectively than simply buying the minimum and selling the maximum. Once both extrema have occurred (noting that we only observe them as they happen), we gain a powerful constraint: the remainder of the walk must remain within the established min-max range. This fundamentally alters the distribution of future prices.
 To illustrate this, consider the following edge case: the global minimum occurs, and we initiate a long position. Later, the global maximum is reached, and we switch to a short. If the price subsequently falls back to the level of the previously announced minimum, we now know with certainty that it cannot drop any further — doing so would contradict the declared minimum. This allows us to confidently enter a long position, exploiting the structural boundary created by the known extrema.
 
+
+## Summary of 
+
+
+## Price walk model
 To develop this idea into a trading strategy, we first need a model for the price walk. Squid Ink was excluded from consideration due to its intentionally erratic behavior — designed to exhibit large, irregular jumps followed by reversion. Cracking the logic behind its generation would likely yield more generalizable edge elsewhere. Kelp, on the other hand, lacked sufficient volatility to make the min/max-based strategy actionable.
 We therefore focus exclusively on Croissants. As discussed earlier, using the midpoint of the largest quantities in the order book gives a strong approximation of fair value. In Croissants, the spread between the two largest levels is typically one or two ticks, resulting in fair values that are either integers or half-integers. By multiplying all prices by 2, we obtain clean integer-valued price paths.
 A reasonable model assumes that the price evolves as an i.i.d. random walk with steps drawn from a symmetric distribution. The figure below shows the empirical step distribution alongside a simplified model in which rare outliers are removed and symmetry is enforced.
@@ -98,6 +103,7 @@ A reasonable model assumes that the price evolves as an i.i.d. random walk with 
 </p>
 
 
+## Modified step distribution
 Given the assumption of an i.i.d. step process with bounded price support, we can derive an optimal trading strategy using dynamic programming (DP). The key insight is that once both the global minimum and maximum have occurred, the remaining price path must stay within these bounds for the rest of the day. This constraint allows us to condition the step distribution at each point in the remaining walk, effectively updating the dynamics based on available information.
 
 We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on how likely it is for future paths to remain within the given bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
@@ -116,10 +122,11 @@ As expected, points near the bounds and with a lot of time left in the session a
   <img src="images/olivia/survival_probability.png" width="600"/>
 </p>
 
-From the survival grid, the step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these adjusted dynamics in hand, we can now formulate a dynamic programming (DP) algorithm that yields the optimal trading strategy.
+From the survival grid, the step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these skewed step distributions in place, we are ready to formulate a DP algorithm that yields the optimal trading strategy.
 
-**Note:** This DP framework is applicable to any step distribution and does not inherently require bounded constraints. However, when the step distribution is symmetric, the expected PnL is negative due to spread crossing costs — making optimal trading impossible. It is the skew introduced by the bounds that creates directional asymmetry and renders the problem both tractable and profitable.
+**Note:** This DP formulation can be applied even without any bounding constraints on the price. However, in the case of a symmetric step distribution, the expected value of any trade becomes negative — since price changes have zero expected drift, and each trade incurs a cost from crossing the spread. It is precisely the bounds on the future price path that introduce asymmetry into the step distribution, making trading directionally profitable and the problem worth solving.
 
+## DP
 
 Problem formulation:
 Given a realization of an i.i.d. random walk with a known step distribution 
@@ -131,10 +138,6 @@ Variables:
  * BL, BU - upper and lower price bounds.
  * Spread - Cost/unit of crossing spread
  * x - position
-
-
-
-
 
 
 
