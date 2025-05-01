@@ -99,9 +99,13 @@ A reasonable model assumes that the price evolves as an i.i.d. random walk with 
 
 
 Given the assumption of an i.i.d. step process with bounded price support, we can derive an optimal trading strategy using dynamic programming (DP). The key insight is that once both the global minimum and maximum have occurred, the remaining price path must stay within these bounds for the rest of the day. This constraint allows us to condition the step distribution at each point in the remaining walk, effectively updating the dynamics based on available information.
+
 We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on how likely it is for future paths to remain within the given bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
+
 This conditioning can be formalized in a Bayesian framework. Knowing the bounds removes all future paths that would exit the allowed region. From any given point, we discard such violating paths and reweight the remaining ones to compute the updated distribution for the next step. Naively computing this requires evaluating all possible paths — an intractable problem, as the number of walks scales exponentially (e.g., 13^t with t ~ 10,000).
+
 To make this computation feasible, we instead begin by computing the **survival probability**: the probability that a walk starting from each grid point remains within the bounds until the end. This can be done recursively in time. We initialize at t = 1, where almost all points have survival probability close to 1 — except those within a few ticks (the largest possible step size) of the boundaries. From there, we propagate survival probabilities backward using a convolution with the step distribution at each slice in time. This recursive approach allows us to efficiently estimate, for any point, how constrained the remaining path is.
+
 The figure below shows the resulting survival probabilities under the bounds [0, 10], assuming the following step distribution:
 
 `probs = {0: 0.6, ±1: 0.17, ±2: 0.03}`
