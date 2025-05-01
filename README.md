@@ -114,7 +114,7 @@ To make this computation feasible, we instead begin by computing the **survival 
 
 The figure below shows the resulting survival probabilities under the bounds [0, 10], assuming the following step distribution:
 
-`probs = {0: 0.6, ±1: 0.17, ±2: 0.03}`
+`step-prob = {0: 0.6, ±1: 0.17, ±2: 0.03}`
 
 As expected, points near the bounds and with a lot of time left in the session are likely to walk outside the bounds, whereas points far from the bounds and close to the end show high survival probability.
 
