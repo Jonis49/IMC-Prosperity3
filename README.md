@@ -1,4 +1,4 @@
-# WHAT'S THE IMPACT
+<h1 align="center">WHAT'S THE IMPACT</h1>
 
 <p align="center">
   <strong>🏅 Placed <span style="font-size:1.3em;">6<sup>th</sup></span> Globally in IMC Prosperity 3 (2025)</strong><br>
