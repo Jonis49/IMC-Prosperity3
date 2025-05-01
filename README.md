@@ -121,13 +121,11 @@ A reasonable model assumes that the price evolves as an i.i.d. random walk with 
 
 
 ## Utilizing the bounds
-Given the assumption of an i.i.d. random walk, we can derive an optimal trading strategy using dynamic programming (DP). The key insight is that once both the global minimum and maximum have occurred, the remaining price path must stay within these bounds for the rest of the day. This constraint allows us to condition the step distribution at each point in the remaining walk, effectively updating the dynamics based on available information.
-
-We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on how likely it is for future paths to remain within the given bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
+In this section the goal is to condense all information from the given bounds so that we can use it in our upcoming dynamic program. We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on the information from the bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
 
 This conditioning can be formalized in a Bayesian framework. Knowing the bounds removes all future paths that would exit the allowed region. From any given point, we discard such violating paths and reweight the remaining ones to compute the updated distribution for the next step. Naively computing this requires evaluating all possible paths — an intractable problem, as the number of walks scales exponentially (e.g., 13^t with t ~ 10,000).
 
-To make this computation feasible, we instead begin by computing the **survival probability**: the probability that a walk starting from each grid point remains within the bounds until the end. This can be done recursively in time. We initialize at t = 1, where almost all points have survival probability 1 — except those close enough to reach outside the boundaries in one step. From there, we propagate survival probabilities backward using a convolution with the step distribution at each slice in time. This recursive approach allows us to efficiently estimate, for any point, what proportion of paths from there end up inside and outside the bounds.
+To make this computation feasible, we instead begin by computing the **survival probability**: the probability that a walk starting from a grid point remains within the bounds until the end. This can be done recursively in time. We initialize at t = 1, where almost all points have survival probability 1 — except those close enough to reach outside the boundaries in one step. From there, we propagate survival probabilities backward using a weighted sum based on the step distribution at each slice in time. This recursive approach allows us to efficiently calculate, for any point, what proportion of paths from there end up inside and outside the bounds.
 
 The figure below shows the resulting survival probabilities under the bounds [0, 10], assuming the following step distribution:
 
@@ -139,10 +137,10 @@ As expected, points near the bounds and with a lot of time left in the session a
   <img src="images/olivia/survival_probability.png" width="600"/>
 </p>
 
-From the survival grid, the step distributions are updated by reweighting each possible step according to the survival probability of the resulting state (state reached by taking that step), and then normalizing to form a valid probability distribution. With these skewed step distributions in place, we are ready to formulate a DP algorithm that yields the optimal trading strategy.
+From the survival grid, the step distributions are updated by reweighting each possible move according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these skewed, state-dependent step distributions in place, we can now formulate a dynamic programming algorithm to derive the optimal trading strategy.
 
 
-## DP
+## DP Formulation and Solution
 
 **Note:** This DP formulation can be applied even without any bounding constraints on the price. However, in the case of a symmetric step distribution, the expected value of any trade becomes negative — since price changes have zero expected drift, and each trade incurs a cost from crossing the spread. It is precisely the bounds on the future price path that introduce asymmetry into the step distribution, making trading directionally profitable and the problem worth solving.
 
