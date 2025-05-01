@@ -48,8 +48,18 @@ maybe how to contact us if
 ---
 <details>
 <summary> SHORT SUMMARY </summary>
+<br>
+  
+# Round 1
 
-maybe explain how the thing is structured and super short explain each round how we did and where we placed what our thoughts were etc
+# Round 2
+
+# Round 3
+
+# Round 4
+
+# Round 5
+
 
 </details>
 
