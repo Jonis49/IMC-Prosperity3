@@ -86,7 +86,20 @@ This summarizes what we managed to implement before the final submission. After 
 
 ---
 
-blablabla
+The information contained in the global minimum and maximum of a random price walk can be leveraged more effectively than simply buying the minimum and selling the maximum. Once both extrema have occurred (noting that we only observe them as they happen), we gain a powerful constraint: the remainder of the walk must remain within the established min-max range. This fundamentally alters the distribution of future prices.
+To illustrate this, consider the following edge case: the global minimum occurs, and we initiate a long position. Later, the global maximum is reached, and we switch to a short. If the price subsequently falls back to the level of the previously announced minimum, we now know with certainty that it cannot drop any further — doing so would contradict the declared minimum. This allows us to confidently enter a long position, exploiting the structural boundary created by the known extrema.
+
+To develop this idea into a trading strategy we need a model for the price walk. The dynamics of Squid Ink price is hard to model as it's intended to ocassionally have massive jumps followed by reverting behaviour; if we could figure out the secret behind the generation of that price series we would be in a position to make plenty of money in other ways. As Kelp did not show large enough moves this to be actionable we focus soley on Croissants. As mentioned before, using the mid of the largest quantities on the order book as fair gives a strong approximation of the true fair. The Croissant market is constantly showing a one or two tick spread between the largest quantities giving resulting in either integer or .5 fairs. Multiplying everything by 2 we get nice integers to work with. A reasonable model is obtained by assuming that the steps are i.i.d variabels from a symmetrical distribution. 
+
+<p align="center">
+  <img src="images/olivia/step:distributions_and_paths.png" width="600"/>
+</p>
+
+
+
+Note that we need to wait for the second extrema before there will be enough information to trade. After the first we will enter a position one way. The bound we are given will only ever alter the rest of the walk in favour of our position and we will therefore not trade until the second extrema.
+
+
 
 
 
