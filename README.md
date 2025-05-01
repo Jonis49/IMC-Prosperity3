@@ -65,14 +65,17 @@ WHAT'S THE IMPACT
 ---
 
 <details>
-<summary>LABELED COUNTERPARTIES -  a DP solution to optimal use of insider information </summary>
+<summary>LABELED COUNTERPARTIES – a DP solution to optimal use of insider information</summary>
 
-In the final round counterparty-information was added to the historical data. This meant that for all trades the identities of both buyer and seller were disclosed. Moreover, this information was going to be available during the run of the final submission. There were around 20 market participants all trading their own set of produts. 
+In the final round, counterparty identifiers were added to the historical data. This meant that for every trade, the identities of both the buyer and seller were disclosed — and this information would also be available in real time during the final submission. There were around 20 market participants, each focused on their own subset of products.
 
-We began by plotting PnL for each counterparty, split by product and decomposed into execution and holding components. Some counterparties made a fortune through execution, consistently trading at favorable prices. However, this insight offered little value for refining our algorithms, as we were already aggressively pursuing those opportunities through market making. Only one counterparty stood out in terms of strong holding-pnl and upon further investigation it was clear that they always bought at the daily minimum and sold at the daily maximum and never took on any other trades. This counterparty only traded Kelp, Squid Ink and Croissants.
+We began by plotting PnL for each counterparty, split by product and decomposed into execution and holding components. Some counterparties generated substantial execution PnL by consistently trading at favorable prices. However, this insight offered limited value for refining our algorithms, as we were already fully exploiting those opportunities through aggressive market making.
 
-Due to the stable nature of Kelp's price putting on delta bets with this min/max information would not generate nearly enough pnl to make up for the market making we would have to give up. 
+Only one counterparty stood out in terms of holding PnL. Upon further inspection, it became clear that they exclusively bought at the daily minimum and sold at the daily maximum — without taking any other trades. This behavior was observed only in Kelp, Squid Ink, and Croissants.
 
-Squid Ink was more fruitful. With big daily swings the historical pnl from buying the min and selling the max netted profits similar to what our current strategy was giving. Moreover, as our strategy for Squid Ink did not rely on market making we could incorporate the min/max based directional trading without giving up the profits from the original strategy. The only change we had to make was to shorten the liquidation time for the mean reversion whenever we had on a delta bet.   
+Due to Kelp’s relatively stable price dynamics, directional bets based on this min/max behavior were unlikely to generate enough profit to justify displacing our existing market-making strategy.
+
+Squid Ink, on the other hand, was more promising. With large daily swings, the historical PnL from a simple min/max strategy matched the performance of our current approach. Since our existing Squid Ink strategy didn’t rely on market making, we could layer in directional trades without cannibalizing our core PnL. The only modification required was to shorten the liquidation horizon for mean-reverting trades whenever a directional bet was active.
 
 </details>
+
