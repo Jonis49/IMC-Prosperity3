@@ -30,7 +30,7 @@ What follows is a product-by-product breakdown of the strategies we developed. W
 
 
 <details>
-<summary>RAINFOREST GENERAL COMMENTS </summary>
+<summary> GENERAL COMMENTS </summary>
 
 anything like this :
 
@@ -40,6 +40,13 @@ maybe mention that we are a first time team
 maybe how to contact us if 
 
 
+</details>
+
+---
+<details>
+<summary> SHORT SUMMARY </summary>
+
+maybe explain how the thing is structured and super short explain each round how we did and where we placed what our thoughts were etc
 
 </details>
 
