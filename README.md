@@ -1,10 +1,16 @@
 # WHAT'S THE IMPACT
 
+<p align="center">
+  <strong>🏅 Placed <span style="font-size:1.3em;">6<sup>th</sup></span> Globally in IMC Prosperity 3 (2025)</strong><br>
+  <em>Among 12,000+ competing teams worldwide</em>
+</p>
+
 **Team:**
 - Jonatan Svensson  
 - Jack Sherry  
 - Adam Leddy  
 - Conor Duddy  
+
 
 This repository outlines our submission to the 2025 **IMC Prosperity 3** algorithmic trading competition — a global event that attracted over 12,000 teams. The challenge spanned five rounds, with new products and market complexities introduced every three days. In each round, teams submitted autonomous trading scripts designed to maximize PnL across synthetic markets that emulate real-world dynamics — including market making, ETF and options trading, cross-exchange arbitrage, and counterparty-driven strategies. Each round also included a game-theoretic problem, though these played a minor role relative to the algorithmic component.
 
