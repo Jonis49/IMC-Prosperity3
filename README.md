@@ -116,7 +116,9 @@ As expected, points near the bounds and with a lot of time left in the session a
   <img src="images/olivia/survival_probability.png" width="600"/>
 </p>
 
-The step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution.
+From the survival grid, the step distributions are updated by reweighting each possible step according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these adjusted dynamics in hand, we can now formulate a dynamic programming (DP) algorithm that yields the optimal trading strategy.
+
+**Note:** This DP framework is applicable to any step distribution and does not inherently require bounded constraints. However, when the step distribution is symmetric, the expected PnL is negative due to spread crossing costs — making optimal trading impossible. It is the skew introduced by the bounds that creates directional asymmetry and renders the problem both tractable and profitable.
 
 
 Problem formulation:
