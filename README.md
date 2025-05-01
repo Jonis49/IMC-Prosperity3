@@ -92,7 +92,7 @@ To illustrate this, consider the following edge case: the global minimum occurs,
 To develop this idea into a trading strategy we need a model for the price walk. The dynamics of Squid Ink price is hard to model as it's intended to ocassionally have massive jumps followed by reverting behaviour; if we could figure out the secret behind the generation of that price series we would be in a position to make plenty of money in other ways. As Kelp did not show large enough moves this to be actionable we focus soley on Croissants. As mentioned before, using the mid of the largest quantities on the order book as fair gives a strong approximation of the true fair. The Croissant market is constantly showing a one or two tick spread between the largest quantities giving resulting in either integer or .5 fairs. Multiplying everything by 2 we get nice integers to work with. A reasonable model is obtained by assuming that the steps are i.i.d variabels from a symmetrical distribution. 
 
 <p align="center">
-  <img src="images/olivia/step:distributions_and_paths.png" width="600"/>
+  <img src="images/olivia/step_distributions_and_paths.png" width="600"/>
 </p>
 
 
