@@ -84,6 +84,9 @@ To capture the strengths of both, we adopted a hybrid approach: we introduced a 
 
 This summarizes what we managed to implement before the final submission. After climbing from #98 to #6 in Round 4, we knew our algorithm was strong. Still cautious from the technical issues in Round 1, we chose to focus on delivering a robust and reliable script rather than pushing for further complexity. That said, some of the ideas we explored were promising enough to deserve a place in this write-up. What follows is one of them.
 
+---
+
+blablabla
 
 
 
