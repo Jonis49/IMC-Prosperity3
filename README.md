@@ -110,7 +110,7 @@ The figure below shows the resulting survival probabilities under the bounds [0,
 
 `probs = {0: 0.6, ±1: 0.17, ±2: 0.03}`
 
-As expected, points near the bounds and with a lot of time left in the session are likely to walk outside violate the bounds, whereas points close far from the bounds and close to the end show high survival probability.
+As expected, points near the bounds and with a lot of time left in the session are likely to walk outside the bounds, whereas points far from the bounds and close to the end show high survival probability.
 
 <p align="center">
   <img src="images/olivia/survival_probability.png" width="600"/>
