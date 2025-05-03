@@ -34,6 +34,7 @@ What follows is a product-by-product breakdown of the strategies we developed. W
 
 <details>
 <summary> GENERAL APPROACH TO STRATEGY GENERATION </summary>
+<br>
 
 Coming into the competition we had no idea what to expect, but we knew that time management would be hugely important to our success. We therefore placed a large emphasis on having an effective workflow when it came to strategy development. With the rounds being quite short and with each team member having time commitments beyond the competition, it was imperative that we didn’t waste time when developing strategies. Outlined below is a general overview of how we structured our workflow going into each round. 
 
