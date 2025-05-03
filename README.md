@@ -48,6 +48,13 @@ Our analysis of each new product began with analysing the direction and size of 
 
 We also hypothesised that such trading patterns should result in a large amount of market impact, with persistent selling driving the price of the asset down. However, once again this was not the case. This can potentially be explained by the fact that at the end of each session our positions (and presumably those of our counterparties) were liquidated. We probably should have expected this, as we were almost certain (and became certain after people hardcoded) that the price paths for each product in each round were predetermined. However, we would have been remiss if we had not at least checked for market impact given our team name : “What’s the Impact?”
 
+## Exploring Opportunities and Optimising Execution
+
+After developing a small intuition for the market microstructure of each product, we explored any trading opportunities specific to each product that we suspected might exist. We leveraged our understanding of each of the products to direct our focus on where these potential opportunities might lie.
+
+Once we had identified a potential signal we shifted our focus to trying to implement a strategy to act on this signal. We typically used the backtester or simple backtesting in Jupyter notebooks to assess the profitability of signals, before deciding on whether or not to incorporate them into our strategy. If the signal turned out to be a profitable one, we then turned our attention to optimising our execution. For each strategy we explored whether it was optimal to act on the signal through market making and/or taking. We used the submission to test the behaviour of the bots when market making, and gauge how their behaviour impacted our execution. 
+
+We also tested different size and edge requirements in each scenario, which proved to be extremely worthwhile as in certain cases this resulted in massive PnL improvements. Through testing liquidation rates (how quickly you could reach a max short/long position at different edge requirements) for different products, we were able to convert our execution into a simple optimisation problem, allowing us to determine an optimal trade size and edge requirement.
 
 
 </details>
