@@ -50,15 +50,15 @@ maybe how to contact us if
 <summary> SHORT SUMMARY </summary>
 <br>
   
-# Round 1
+## Round 1
 
-# Round 2
+## Round 2
 
-# Round 3
+## Round 3
 
-# Round 4
+## Round 4
 
-# Round 5
+## Round 5
 
 
 </details>
@@ -132,7 +132,7 @@ WHAT'S THE IMPACT
 <summary>LABELED COUNTERPARTIES – a DP solution to optimal use of insider information</summary>
 <br>
 
-# Short Summary
+## Short Summary
 In the final round, counterparty identifiers were added to the historical data. This meant that for every trade, the identities of both the buyer and seller were disclosed — and this information would also be available in real time during the final submission. There were around 20 market participants, each focused on their own subset of products.
 
 We began by plotting PnL for each counterparty, split by product and decomposed into execution and holding components. Some counterparties generated substantial execution PnL by consistently trading at favorable prices. However, this insight offered limited value for refining our algorithms, as we were already fully exploiting those opportunities through aggressive market making.
@@ -151,13 +151,13 @@ This summarizes what we managed to implement before the final submission. After 
 
 ---
 
-# Dynamic Programming Again?
+## Dynamic Programming Again?
 
 The information contained in the global minimum and maximum of a random price walk can be leveraged more effectively than simply buying the minimum and selling the maximum. Once both extrema have occurred (noting that we only observe them as they happen), we gain a powerful constraint: the remainder of the walk must remain within the established min-max range. This fundamentally alters the distribution of future prices.
 To illustrate this, consider the following edge case: the global minimum occurs, and we initiate a long position. Later, the global maximum is reached, and we switch to a short. If the price subsequently falls back to the level of the previously announced minimum, we now know with certainty that it cannot drop any further — doing so would contradict the declared minimum. This allows us to confidently enter a long position, exploiting the boundary created by the known extrema.
 
 
-## Summary this section
+### Overview of this section
 
 - Modelling Price and Establishing Assumptions
 - Bayesian Approach to Utilizing Information from Bounds
@@ -166,7 +166,7 @@ To illustrate this, consider the following edge case: the global minimum occurs,
 - Concluding Remarks
 
 
-## Price walk model
+### Price walk model
 To develop this idea into a trading strategy, we first need a model for the price walk. Squid Ink was excluded from consideration due to its intentionally erratic behavior — designed to exhibit large, irregular jumps followed by reversion. Cracking the logic behind its generation would likely yield more generalizable edge elsewhere. Kelp, on the other hand, lacked sufficient volatility to make the min/max-based strategy actionable.
 We therefore focus exclusively on Croissants. As discussed earlier, using the midpoint of the largest quantities in the order book gives a strong approximation of fair value. In Croissants, the spread between the two largest levels is typically one or two ticks, resulting in fair values that are either integers or half-integers. By multiplying all prices by 2, we obtain clean integer-valued price paths.
 A reasonable model assumes that the price evolves as an i.i.d. random walk with steps drawn from a symmetric distribution. The figure below shows the empirical step distribution alongside a simplified model in which rare outliers are removed and symmetry is enforced.
@@ -176,7 +176,7 @@ A reasonable model assumes that the price evolves as an i.i.d. random walk with 
 </p>
 
 
-## Utilizing the bounds
+### Utilizing the bounds
 In this section the goal is to condense all information from the given bounds so that we can use it in our upcoming dynamic program. We work in a grid of shape `(remaining time steps) × (current price)`, and at each point on this grid we aim to adjust the step distribution based on the information from the bounds. Far from the bounds or with few steps remaining, the step distribution remains essentially unchanged. In contrast, points near the upper or lower bound are subject to sharply skewed distributions: for instance, if the price is near the upper bound, downward steps become significantly more likely under the constraint that the walk must stay inside the range.
 
 This conditioning can be formalized in a Bayesian framework. Knowing the bounds removes all future paths that would exit the allowed region. From any given point, we discard such violating paths and reweight the remaining ones to compute the updated distribution for the next step. Naively computing this requires evaluating all possible paths — an intractable problem, as the number of walks scales exponentially (e.g., 13^t with t ~ 10,000).
@@ -196,7 +196,7 @@ As expected, points near the bounds and with a lot of time left in the session a
 From the survival grid, the step distributions are updated by reweighting each possible move according to the survival probability of the resulting state, and then normalizing to form a valid probability distribution. With these skewed, state-dependent step distributions in place, we can now formulate a dynamic programming algorithm to derive the optimal trading strategy.
 
 
-## DP Formulation and Solution
+### DP Formulation and Solution
 
 **Note:** This DP formulation can be applied even without any bounding constraints on the price. However, in the case of a symmetric step distribution, the expected value of any trade becomes negative — since price changes have zero expected drift, and each trade incurs a cost from crossing the spread. It is precisely the bounds on the future price path that introduce asymmetry into the step distribution, making trading directionally profitable and the problem worth solving.
 
@@ -217,9 +217,9 @@ Variables:
 
 Note that we need to wait for the second extrema before there will be enough information to trade. After the first we will enter a position one way. The bound we are given will only ever alter the rest of the walk in favour of our position and we will therefore not trade until the second extrema.
 
-## Performance
+### Performance
 
-## Remarks
+### Remarks
 
 include something about how easy tis would be to implement by jsut fitting one polynomial
 
