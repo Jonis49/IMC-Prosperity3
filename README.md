@@ -33,14 +33,20 @@ What follows is a product-by-product breakdown of the strategies we developed. W
 [^1]: The first few rounds were plagued by teams hardcoding strategies, as IMC reused publicly available data from earlier editions of the competition.
 
 <details>
-<summary> GENERAL COMMENTS </summary>
+<summary> GENERAL APPROACH TO STRATEGY GENERATION </summary>
 
-anything like this :
+Coming into the competition we had no idea what to expect, but we knew that time management would be hugely important to our success. We therefore placed a large emphasis on having an effective workflow when it came to strategy development. With the rounds being quite short and with each team member having time commitments beyond the competition, it was imperative that we didn’t waste time when developing strategies. Outlined below is a general overview of how we structured our workflow going into each round. 
 
-Talk about backing out fv from submitting and how it lines upw ith mid of big sizes.
-reference the wiki 
-maybe mention that we are a first time team
-maybe how to contact us if 
+## Fair Value Estimation
+
+Before constructing any strategy we wanted to make sure that we were confident in our fair value estimations for each product. For both products in the tutorial round our initial approach was to take the mid price of the largest order on either side of the book. After submitting a couple of initial test algorithms we recognised that our PnL was given at each timestamp and this took into account our positional value as well, which suggested that there was a true fair value for each product at each timestamp. We then realised that we would be able to take advantage of this and submitted an algorithm that traded once in the first timestamp and held this position until the end of the submission. By tracking the PnL we were able to back out the true fair value evolution for each product and compare it with our estimation using the data from the orderbook. We found that the mid price of the large orders was consistently accurate at tracking the true FV. We therefore proceeded to use this as our estimation of the fair value in each of our submissions. We did however make sure to test these estimations on the submission data at the start of each new round. 
+
+## Analysing Order Flow 
+
+Our analysis of each new product began with analysing the direction and size of the orders traded. We first looked at the signed volume traded, looking in particular at the direction that the aggressor had taken. We were able to infer the aggressors direction by comparing the price at which the order traded with the mid price of the market on the same timestamp as the trade. We found that there were serious flow imbalances in multiple products, typically with the aggressor persistently selling throughout the session. We hoped to find some directional information encoded in these flow imbalances, however, there was no sign that the signed volume had any impact on the price of the asset. This was something that confused (and frustrated) us massively throughout the rounds, until in Round 5 details of counterparties were released and we were able to fit a narrative to these trading patterns. We found that two parties were simply trading with each other, one of which was market making and the other was either consistently buying or selling from them. For example Pablo consistently sold options regardless of the price to Camilla, who was market making and profiting consistently from him crossing the spread (He was consistently selling the 10500 strike options to her for 0 seashells !). 
+
+We also hypothesised that such trading patterns should result in a large amount of market impact, with persistent selling driving the price of the asset down. However, once again this was not the case. This can potentially be explained by the fact that at the end of each session our positions (and presumably those of our counterparties) were liquidated. We probably should have expected this, as we were almost certain (and became certain after people hardcoded) that the price paths for each product in each round were predetermined. However, we would have been remiss if we had not at least checked for market impact given our team name : “What’s the Impact?”
+
 
 
 </details>
