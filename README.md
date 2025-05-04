@@ -89,6 +89,30 @@ Under mild assumptions the problem becomes optimally solvable.
 ---
 
 <details>
+<summary>KELP - Market Making & Taking </summary>
+<br>
+
+Kelp was one of the two products available to trade in the tutorial round, and as such we initially invested a lot of time into optimising our strategy. Unlike Rainforest Resin, Kelp was much more volatile and presented the potential for directional bets as well as simple market making/taking strategies. 
+
+In a similar fashion to how we approached trading all new products, we started by analysing the flow in Kelp and found that the aggressors in the trades were persistently selling across each trading day. However, there was no directional information or signal encoded in the volume that we could find. After this initial analysis we started to develop our market making & taking strategy. 
+
+## Market Making & Taking
+
+The first step in this process as always was establishing our fair value, which once again we were able to determine by submitting a single trade algorithm to the submission in order to back out the true fair. When comparing this with the mid price of the largest orders on the bid and the ask we found that our estimate was always within +- 0.25 of the true fair. From here we built our strategy up, starting with market taking which was very simple: we would simply take anything in max size that had any edge. We also added in a condition that if we could trade for 0 edge and flatten our position we would. This helped us to avoid hitting the position limits of +- 50 which was the main constraint when it came to PnL maximisation. 
+
+Next, we implemented a simple market making strategy which took the updated orderbook after we had interacted with it and placed ourselves top of book, just inside the previous top of book order, provided it was edgy to do so. If the current top of book was quoting only 1 seashell away from fair we would join them at the top of the book. We would market make in the maximum size possible that wouldn’t put us over the position limit and thus cancel our order. After implementing this we experimented with trying to convert our edge and size requirements into an optimisation problem where we would model the bot’s behaviour in a similar manner to our initial trading in Rainforest Resin. However, after our Round 1 script didn’t run we decided to abandon this, prioritising robustness and simplicity in our strategy.
+
+## Directional Information
+
+In the final round we got information on who the counterparties in each trade were and we found that Olivia had directional information about the price of Kelp. We found that she traded twice each day, buying the global min and selling the global max. However, the difference between these values on most days was only 15 seashells. With a position limit of 50 this meant we could only expect a profit of around 750-1000 seashells per day by following her trades. Our market making/taking strategy was making us close to 6k per day and as a result we decided to forego incorporating her trading into our strategy. If we had more time we might have invested more time into skewing our markets and edge requirements to make a directional bet, as well as capturing the two way flow throughout. However, we felt as though there were far more profitable opportunities elsewhere when we came across this that we decided to simply ignore it. 
+
+
+
+</details>
+
+---
+
+<details>
 <summary>SQUID INK - mean reversion </summary>
 
 ## Initial Ideas
