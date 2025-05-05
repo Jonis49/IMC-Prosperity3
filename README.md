@@ -150,8 +150,14 @@ dont include olivia here
 
 <details>
 <summary>VOLCANIC ROCK VOUCHERS (options) - volatility smile</summary>
+<br>
 
-WHAT'S THE IMPACT
+The Volcanic Rock and the Vouchers were released in Round 3. Paired together, the vouchers acted as traditional European call options with the Volcanic Rock acting as the corresponding underlying stock. When they were first introduced the options had 5 days to expiry, with each round representing a trading day. There were 5 strike prices for these vouchers: 9500, 9750, 10000, 10250 and 10500. 
+
+As a team we cumulatively invested by far the most time into these products, spending a large amount of time on them throughout each of the rounds that they were tradable. We decided to commit so much time to them for a couple of reasons: For one, we felt that they represented by far the largest opportunity out of any of the products in the competition, and therefore spending time fine tuning our strategy would yield the highest return on our time investment. Secondly, exploring different opportunities in trading these options excited us. They were by far the most nuanced product to trade and they offered huge learning opportunities to all of us, which we both enjoyed and were grateful for the fact that we had spent time trying to understand them. Allocating our time in this manner proved to be extremely fruitful, with it being the main catalyst to our rise up the leaderboard in the latter rounds. Thanks mostly to our options strategy we rose from 667th in Round 2 to 98th place in Round 3, before climbing all the way up to 6th place in the world at the end of Round 4. Our Algo PnL in Round 4 was the 3rd highest in the world judging off Jasper’s leaderboard. 
+
+Having spent so much time developing and testing different strategies we could probably write our entire recap on the trading in the Vouchers, however, in the interest of keeping the recap length short we will try to summarise everything we did succinctly and efficiently. 
+
 
 </details>
 
