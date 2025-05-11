@@ -61,7 +61,7 @@ We also tested different size and edge requirements in each scenario, which prov
 
 ---
 <details>
-<summary> SHORT SUMMARY </summary>
+<summary> Round by round overview </summary>
 <br>
   
 ## Round 1
