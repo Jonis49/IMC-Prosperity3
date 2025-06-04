@@ -199,7 +199,9 @@ Therefore we have the following values:
  * $\epsilon$ - Weighting Parameter
 
  The weighting is given by:
- $$w_i = \frac{1}{|x_i| + \epsilon} $$
+ $$  
+ w_i = \frac{1}{|x_i| + \epsilon} 
+ $$  
  
 
 
