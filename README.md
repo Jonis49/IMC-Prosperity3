@@ -180,6 +180,11 @@ Once we had implemented an initial iteration of our strategy, taking around the 
 
 With this in mind we tried multiple different types of weightings in order to take this into account. We initially tried weighting the datapoints by vega before fitting the curve, however, to our surprise this performed quite poorly. We then shifted our approach, trying different weightings before settling on weighting by moneyness, which we found performed significantly better than weighting by vega or not weighting at all. In fact we found that our PnL jumped by nearly 50k per day on backtests after implementing this. These results carried over into the submission, where these changes saw us move from 98th place in Round 3 to 6th place globally in Round 4, with our PnL in Round 4 ranking 3rd globally. 
 
+![My diagram showing data flow](images/Weighted%20Curve.jpeg)
+
+*Figure 1.* An example of a weigted curve using $\epsilon = 2$.
+
+
 ## Directional Opportunities 
 
 We have seen in recaps online and from the Discord channel that some teams traded a mean reverting strategy on the underlying Volcanic Rock, however this wasn’t something that we managed to incorporate into our strategy. During the competition we weren’t able to find any directional information in the order flow, and we also overlooked the fact that the Volcanic Rock might be mean reverting. We neglected this possibility as we saw multiple days where the Rock price moved in one direction for the entire session, giving us little reason to believe that the price was indeed mean reverting. 
