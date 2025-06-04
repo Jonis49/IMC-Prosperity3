@@ -198,7 +198,7 @@ Therefore we have the following values:
  * $w_i$ - Weighting
  * $\epsilon$ - Weighting Parameter
 
- The weighting is given by:
+ The weighting is given by:  
  $$  
  w_i = \frac{1}{|x_i| + \epsilon} 
  $$  
