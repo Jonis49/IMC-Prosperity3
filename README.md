@@ -180,9 +180,16 @@ Once we had implemented an initial iteration of our strategy, taking around the 
 
 With this in mind we tried multiple different types of weightings in order to take this into account. We initially tried weighting the datapoints by vega before fitting the curve, however, to our surprise this performed quite poorly. We then shifted our approach, trying different weightings before settling on weighting by moneyness, which we found performed significantly better than weighting by vega or not weighting at all. In fact we found that our PnL jumped by nearly 50k per day on backtests after implementing this. These results carried over into the submission, where these changes saw us move from 98th place in Round 3 to 6th place globally in Round 4, with our PnL in Round 4 ranking 3rd globally. 
 
-![My diagram showing data flow](images/Weighted%20Curve.jpeg)
+<figure class="boxed-caption">
+  <img
+    src="images/Weighted%20Curve.jpeg"
+    alt="Weighted Smile"
+  />
+  <figcaption>
+    An example of a weighted volatility smile using $\epsilon = 2$.
+  </figcaption>
+</figure>
 
-*Figure 1.* An example of a weigted curve using $\epsilon = 2$.
 
 
 ## Directional Opportunities 
