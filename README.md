@@ -203,10 +203,13 @@ $w_i = \frac{1}{|x_i| + \epsilon}$
 
 The coefficients of the polynomial are then computed by minimizing:
 
-$$
-\displaystyle
-\sum_{i} w_{i}\,\bigl(y_{i} \;-\; p(x_{i})\bigr)^{2}
-$$
+<p align="center">
+  <img
+    src="https://latex.codecogs.com/png.latex?\dpi{300}\displaystyle%20\sum_{i}%20w_{i}\,\bigl(y_{i}%20-%20p(x_{i})\bigr)^{2}"
+    alt="Sum of w_i (y_i - p(x_i))^2"
+    style="max-width: 90%;"
+  />
+</p>
 
 
 This weighting effectively neglects points with a low weighting (points with a large absolute moneyness, either deep ITM or OTM). It also forces the curve to effectively pass through points with a moneyness close to 0 (points ATM). This has precisely the desired effect of weighting points at the money highest as they offer the most potential to trade profitably around the curve. 
