@@ -199,10 +199,7 @@ Therefore we have the following values:
  * $\epsilon$ - Weighting Parameter
 
 The weighting is given by:  
-$$
-w_i \;=\; \frac{1}{\,|x_i| \;+\; \epsilon}
-$$<br>
- 
+$w_i = \frac{1}{|x_i| + \epsilon}$
 
 
 ## Directional Opportunities 
