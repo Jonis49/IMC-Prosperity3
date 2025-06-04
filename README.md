@@ -180,16 +180,6 @@ Once we had implemented an initial iteration of our strategy, taking around the 
 
 With this in mind we tried multiple different types of weightings in order to take this into account. We initially tried weighting the datapoints by vega before fitting the curve, however, to our surprise this performed quite poorly. We then shifted our approach, trying different weightings before settling on weighting by moneyness, which we found performed significantly better than weighting by vega or not weighting at all. In fact we found that our PnL jumped by nearly 50k per day on backtests after implementing this. These results carried over into the submission, where these changes saw us move from 98th place in Round 3 to 6th place globally in Round 4, with our PnL in Round 4 ranking 3rd globally. 
 
-<figure class="boxed-caption">
-  <img
-    src="images/Weighted%20Curve.jpeg"
-    alt="Weighted Smile"
-  />
-  <figcaption>
-    An example of a weighted volatility smile using $\epsilon = e^{-2}$.
-  </figcaption>
-</figure>
-
 The polynomial was fitted using a least squares approach in numpy. If we let the polynomial $p(x) = ax^2 + bx + c$, it is the parameters a,b and c which are being fitted to the datapoints which look like (moneyness,IV).
 
 Therefore we have the following values:
@@ -205,6 +195,16 @@ The coefficients of the polynomial are then computed by minimising:
 $\Sigma \hspace{5mm} w_i( y_i - p(x_i) )^2$
 
 This weighting effectively neglects points with a low weighting (points with a large absolute moneyness, either deep ITM or OTM). It also forces the curve to effectively pass through points with a moneyness close to 0 (points ATM). This has precisely the desired effect of weighting points at the money highest as they offer the most potential to trade profitably around the curve. 
+
+<figure class="boxed-caption">
+  <img
+    src="images/Weighted%20Curve.jpeg"
+    alt="Weighted Smile"
+  />
+  <figcaption>
+    Above is an example of a weighted volatility smile using $\epsilon = e^{-2}$.
+  </figcaption>
+</figure>
 
 
 ## Directional Opportunities 
