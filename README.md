@@ -186,7 +186,7 @@ With this in mind we tried multiple different types of weightings in order to ta
     alt="Weighted Smile"
   />
   <figcaption>
-    An example of a weighted volatility smile using $\epsilon = 2$.
+    *An example of a weighted volatility smile using $\epsilon = \e^{-2}$.*
   </figcaption>
 </figure>
 
