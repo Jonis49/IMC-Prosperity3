@@ -186,10 +186,21 @@ With this in mind we tried multiple different types of weightings in order to ta
     alt="Weighted Smile"
   />
   <figcaption>
-    *An example of a weighted volatility smile using* $\epsilon = e^{-2}$.
+    An example of a weighted volatility smile using $\epsilon = e^{-2}$.
   </figcaption>
 </figure>
 
+The polynomial was fitted using a least squares approach in numpy. If we let the polynomial $p(x) = ax^2 + bx + c$, it is the parameters a,b and c which are being fitted to the datapoints which look like (moneyness,IV).
+
+Therefore we have the following values:
+ * $x_i$ - Moneyness  
+ * $y_i$ - IV
+ * $w_i$ - Weighting
+ * $\epsilon$ - Weighting Parameter
+
+ The weighting is given by:
+ $$w_i = \frac{1}{|x_i| + \epsilon} $$
+ 
 
 
 ## Directional Opportunities 
