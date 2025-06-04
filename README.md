@@ -202,7 +202,7 @@ The weighting is given by:
 $w_i = \frac{1}{|x_i| + \epsilon}$
 
 The coefficients of the polynomial are then computed by minimising:  
-$\Sum  w_i( y_i - p(x_i) )^2$
+$\Sigma  w_i( y_i - p(x_i) )^2$
 
 This weighting effectively neglects points with a low weighting (points with a large absolute moneyness, either deep ITM or OTM). It also forces the curve to effectively pass through points with a moneyness close to 0 (points ATM). This has precisely the desired effect of weighting points at the money highest as they offer the most potential to trade profitably around the curve. 
 
