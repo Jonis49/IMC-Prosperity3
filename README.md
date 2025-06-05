@@ -7,7 +7,7 @@
 
 **Team:**
 - Jonatan Svensson  
-- Jack Sherry  
+- Jack Sherry  [🔗 LinkedIn](https://www.linkedin.com/in/jack-sherry-739652299/)
 - Adam Leddy  
 - Conor Duddy  
 
